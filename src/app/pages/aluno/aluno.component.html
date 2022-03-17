@@ -1,0 +1,9 @@
+<div nz-row [nzGutter]="32" class="altura" nzJustify="center">
+    <div nz-col nzSpan="12">
+        <app-aluno-list #list></app-aluno-list>
+    </div>
+
+    <div nz-col nzSpan="12">
+        <app-aluno-form (refreshList)="list.loadTable()"></app-aluno-form>
+    </div>
+</div>

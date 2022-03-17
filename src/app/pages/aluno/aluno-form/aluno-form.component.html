@@ -1,0 +1,41 @@
+<div class="layout">
+    <form nz-form [formGroup]="form" (ngSubmit)="submit()">
+        <div>
+            <div class="title">
+                <span>Novo Aluno</span>
+            </div>
+
+            <div nz-row [nzGutter]="16">
+                <div nz-col nzSpan="24">
+                    <nz-form-item class="grid">
+                        <nz-form-label class="label">Nome<span class="required-mark">*</span></nz-form-label>
+                        <nz-form-control>
+                            <nz-input-group>
+                                <input  formControlName="nome" nz-input
+                                    placeholder="Nome do Aluno" required
+                                    [ngClass]="{ 'is-invalid': form.controls.nome.touched && form.controls.nome.errors }" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col nzSpan="24">
+                    <nz-form-item class="grid">
+                        <nz-form-label class="label">Telefone<span class="required-mark">*</span></nz-form-label>
+                        <nz-form-control>
+                            <nz-input-group>
+                                <input  formControlName="telefone" nz-input
+                                    placeholder="Telefone do Aluno" required
+                                    [ngClass]="{ 'is-invalid': form.controls.telefone.touched && form.controls.telefone.errors }" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+
+            <div class="button-enviar">
+                <button type="submit" [disabled]="!form.valid || !form.dirty">Enviar</button>
+            </div>
+        </div>
+    </form>
+</div>

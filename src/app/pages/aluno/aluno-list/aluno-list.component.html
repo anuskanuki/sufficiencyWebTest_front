@@ -1,0 +1,35 @@
+<div class="layout">
+    <div class="title">
+        <span>Alunos Cadastrados</span>
+    </div>
+
+    <div class="tabela">
+        <nz-table #table nzShowPagination nzShowSizeChanger [nzShowTotal]="rangeTemplate" nzTableLayout="fixed"
+            nzSize="middle" [nzData]="tableRows">
+            <thead>
+                <tr>
+                    <th *ngFor="let column of listOfColumn" [nzAlign]="column.align" [nzSortFn]="column.compare"
+                        [nzWidth]="column.width || ''">
+                        {{ column.title }}
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let data of table.data">
+                    <td class="padding" [nzAlign]="'left'">{{ data.id }}</td>
+                    <td class="padding" [nzAlign]="'left'">{{ data.nome }}</td>
+                    <td class="padding" [nzAlign]="'left'">{{ data.telefone }}</td>
+                </tr>
+            </tbody>
+        </nz-table>
+
+        <ng-template #rangeTemplate let-range="range" let-total>
+            Mostrando {{ range[0] }} a {{ range[1] }} de {{ total }} itens
+        </ng-template>
+
+        <ng-template #footer>
+            <nz-pagination nzShowPagination [nzShowTotal]="rangeTemplate" nzShowSizeChanger></nz-pagination>
+        </ng-template>
+    </div>
+</div>

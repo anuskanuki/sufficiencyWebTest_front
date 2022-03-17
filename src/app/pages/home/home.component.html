@@ -1,0 +1,37 @@
+<div nz-row [nzGutter]="32">
+    <div nz-col nzSpan="12">
+        <div class="card-boas-vindas">
+            <div class="left">
+                <h3>Bem-vindo(a) {{userNameByEmail}}!</h3>
+                <h3>Este é o trabalho de suficiência WEB da Anuska!</h3>
+                <h3>
+                    Aqui você encontrará:
+                </h3>
+                <ul>
+                    <li>Web Service REST com comunicação JSON;</li>
+                    <li>Persistência em banco de dados;</li>
+                    <li>Autenticação JWT;</li>
+                    <li>API usando .Net;</li>
+                    <li>Frontend usando Angular;</li>
+                    <li>Biblioteca NG-Zorro (ANT Design para Angular);</li>
+                    <li>Entidade <a routerLink="/aluno">ALUNO</a> com métodos GET e POST.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div nz-col nzSpan="12">
+        <div class="centralize">
+            <a routerLink="/aluno">
+                <div class="card">
+                    <h3>
+                        <i nz-icon nzType="user" nzTheme="outline"></i>
+                        Alunos
+                    </h3>
+                    <p>Listagem (GET)</p>
+                    <label>Inserção (POST)</label>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
